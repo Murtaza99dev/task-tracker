@@ -1,0 +1,15 @@
+meta {
+  name: Delete Task
+  type: http
+  seq: 3
+}
+
+delete {
+  url: http://localhost:5000/api/tasks/<TASK_ID>
+  body: none
+  auth: inherit
+}
+
+headers {
+  Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzUwOTcxMTYzLCJleHAiOjE3NTE1NzU5NjN9.p-p9svDD8gsRkbaLHFmBSx_ujqOp49-gnXdIFTG8u3I
+}

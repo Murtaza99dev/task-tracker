@@ -1,0 +1,21 @@
+meta {
+  name: Create Task
+  type: http
+  seq: 1
+}
+
+post {
+  url: http://localhost:5000/api/tasks
+  body: json
+  auth: inherit
+}
+
+headers {
+  Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzUwOTcxMTYzLCJleHAiOjE3NTE1NzU5NjN9.p-p9svDD8gsRkbaLHFmBSx_ujqOp49-gnXdIFTG8u3I
+}
+
+body:json {
+  {
+    "title": "Test Bruno Task"
+  }
+}

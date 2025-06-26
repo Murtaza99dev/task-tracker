@@ -32,19 +32,20 @@ A full-featured **Task Tracker backend** built using **Node.js**, **TypeScript**
 
 ## 📁 Project Structure
 
+```
 task-tracker/
 ├── drizzle.config.ts
 ├── package.json
 ├── tsconfig.json
 ├── .env
 ├── src/
-│ ├── index.ts
-│ ├── db.ts
-│ ├── schema/
-│ ├── routes/
-│ ├── middleware/
-│ └── utils/
-
+│   ├── index.ts
+│   ├── db.ts
+│   ├── schema/
+│   ├── routes/
+│   ├── middleware/
+│   └── utils/
+```
 
 ---
 
@@ -57,7 +58,10 @@ git clone https://github.com/Murtaza99dev/task-tracker.git
 cd task-tracker/backend
 yarn install
 ```
-### 3️⃣ Create .env File
+
+### 2️⃣ Create .env File
+
+```
 PORT=5000
 JWT_SECRET=your_jwt_secret_key
 DB_HOST=localhost
@@ -66,58 +70,70 @@ DB_USER=your_postgres_user
 DB_PASSWORD=your_postgres_password
 DB_NAME=task_db
 DATABASE_URL=postgresql://your_postgres_user:your_postgres_password@localhost:5432/task_db
+```
 
-### 4️⃣ Run the Project
+### 3️⃣ Run the Project
+
+```bash
 yarn dev
+```
 
-The server should now be running at: http://localhost:5000
+The server should now be running at: [http://localhost:5000](http://localhost:5000)
 
+---
 
+## 🧪 API Endpoints
 
-🧪 API Endpoints
-🔐 Auth Routes
-Method	Endpoint	Description
-POST	/api/register	Register new user
-POST	/api/login	Login and get JWT
+### 🔐 Auth Routes
 
-✅ Task Routes (Protected)
-Method	Endpoint	Description
-GET	/api/tasks	Get all tasks
-POST	/api/tasks	Create new task
-PUT	/api/tasks/:id	Update task
-DELETE	/api/tasks/:id	Delete task
+| Method | Endpoint        | Description           |
+|--------|----------------|-----------------------|
+| POST   | /api/register  | Register new user     |
+| POST   | /api/login     | Login and get JWT     |
 
-🔐 All /api/tasks endpoints require a JWT token in the request header:
+### ✅ Task Routes (Protected)
 
-http
-Copy
-Edit
-Authorization: Bearer <your_jwt_token>
-🧰 Drizzle ORM Commands
-Run after creating or modifying your schema in src/schema.
+| Method | Endpoint         | Description         |
+|--------|-----------------|---------------------|
+| GET    | /api/tasks      | Get all tasks       |
+| POST   | /api/tasks      | Create new task     |
+| PUT    | /api/tasks/:id  | Update task         |
+| DELETE | /api/tasks/:id  | Delete task         |
 
-Push Schema to DB
-bash
-Copy
-Edit
+> **Note:** All `/api/tasks` endpoints require a JWT token in the request header:
+>
+> ```
+> Authorization: Bearer <your_jwt_token>
+> ```
+
+---
+
+## 🧰 Drizzle ORM Commands
+
+Run after creating or modifying your schema in `src/schema`.
+
+**Push Schema to DB**
+```bash
 npx drizzle-kit push
-Generate SQL from Schema
-bash
-Copy
-Edit
+```
+
+**Generate SQL from Schema**
+```bash
 npx drizzle-kit generate
-🧑‍💻 Development Tools
+```
+
+---
+
+## 🧑‍💻 Development Tools
+
 Start server in watch mode:
 
-bash
-Copy
-Edit
+```bash
 yarn dev
-Drizzle ORM setup config (drizzle.config.ts):
+```
 
-ts
-Copy
-Edit
+**Drizzle ORM setup config (`drizzle.config.ts`):**
+```ts
 import { defineConfig } from "drizzle-kit";
 import * as dotenv from "dotenv";
 dotenv.config();
@@ -130,23 +146,33 @@ export default defineConfig({
     connectionString: process.env.DATABASE_URL!,
   },
 });
-📄 License
+```
+
+---
+
+## 📄 License
+
 This project is licensed under the MIT License. See the LICENSE file for details.
 
-🙋‍♂️ Author
-Ghulam Murtaza
+---
 
-GitHub: @Murtaza99dev
-Email: murtaza99.dev@gmail.com
-LinkedIn: https://www.linkedin.com/in/im-ghulam-murtaza/
+## 🙋‍♂️ Author
 
-🧠 Future Improvements
-📅 Task due dates and prioritization
+**Ghulam Murtaza**
 
-📊 Task analytics
+- GitHub: [@Murtaza99dev](https://github.com/Murtaza99dev)
+- Email: murtaza99.dev@gmail.com
+- LinkedIn: [https://www.linkedin.com/in/im-ghulam-murtaza/](https://www.linkedin.com/in/im-ghulam-murtaza/)
 
-🌐 Frontend integration (React/Next.js)
+---
 
-🧑‍🤝‍🧑 Team/task sharing
+## 🧠 Future Improvements
+
+- 📅 Task due dates and prioritization
+- 📊 Task analytics
+- 🌐 Frontend integration (React/Next.js)
+- 🧑‍🤝‍🧑 Team/task sharing
+
+---
 
 Let me know if you want a separate Postman/Bruno collection JSON or frontend instructions added.
